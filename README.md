@@ -4,20 +4,11 @@
 
 This module is intended to create custom roles in in Azure RM following my business needs and standards.  
 
-#### Tasks & ToDos
-
-- [x] Create and manage a custom Azure role
-- [ ] \(Optional) Apply input variable validation rules if necessary to match available resource values
-- [ ] \(Optional) Apply input variable validation rules if necessary to match business standards
-- [x] Create and manage modules outputs
-- [x] Document module with README.md
-- [ ] \(Optional) Review code regularly for possible improvements and updates
-
 ### Requirements
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.10.0 |
 | <a name="requirement_azurerm"></a> [hashicorp\/azurerm](#requirement\_azurerm) | ~> 4.0 |
 
 ### Resources
@@ -58,23 +49,6 @@ module "azurerm_role_definition" {
   
 ### Known Issues
 
-<details>
-<summary><b>Required permissions</b></summary>
-
-######
-Although the nature of the matter means that the account used for Terraform deployment requires elevated privileges, the built-in Contributor role is sufficient in most cases and therefore often used. However, the Contributor role has a number of NotActions such as *Microsoft.Authorization/\*/Write*. Without this permissions the following resources cannot be managed:
+Known issues are documented with the GitHub repo's issues functionality. Please filter the issues by **Types** and select **Known Issue** to get the appropriate issues and read the results carefully before using the module to avoid negative impacts on your infrastructure.  
   
-- Creating RBAC roles and assigning against scopes
-  - azurerm_role_assignment
-  - azurerm_role_definition
-  - azurerm_user_assigned_identity
-- Creating and assigning policy definitions and initiatives
-  - azurerm_policy_assignment
-  - azurerm_policy_definition
-  
-In this case, either the Owner role is required or a custom role needs to be in place with Contributor permissions and the following permissions in addition:
-- "Microsoft.Authorization/*/Delete"
-- "Microsoft.Authorization/*/Write"
-- "Microsoft.Authorization/elevateAccess/Action"
-  
-</details>
+<a name="known_issues"></a> [list of Known Issues](https://github.com/uplink-systems/terraform-module-azurerm-role-definition/issues?q=type%3A%22known%20issue%22)
