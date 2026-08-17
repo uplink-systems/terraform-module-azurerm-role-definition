@@ -3,13 +3,15 @@
 ### Description
 
 This module is intended to create custom roles in in Azure RM following my business needs and standards.  
+  
+It needs **Microsoft.Authorization** registered as API provider when using with AzureRM provider 5.0.0 or above.  
 
 ### Requirements
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.10.0 |
-| <a name="requirement_azurerm"></a> [hashicorp\/azurerm](#requirement\_azurerm) | ~> 4.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.15.0, < 2.0.0 |
+| <a name="requirement_azurerm"></a> [hashicorp\/azurerm](#requirement\_azurerm) | >= 4.0.0, < 6.0.0 |
 
 ### Resources
 
